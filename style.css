@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #2c3e50;
+  background-color: #eef5fb;
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+main {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 40px 0 48px;
+}
+
+h1 {
+  margin: 0 0 28px;
+  color: #264e73;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+}
+
+h2 {
+  margin: 0 0 24px;
+  color: #345a78;
+  font-size: 19px;
+}
+
+.ledger-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(520px, 1.28fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.entry-panel,
+.summary-panel,
+.list-panel {
+  border: 1px solid #dbe8f3;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(38, 78, 115, 0.06);
+}
+
+.entry-panel {
+  padding: 28px;
+}
+
+.form-field {
+  display: grid;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #456178;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #b9cad9;
+  border-radius: 5px;
+  color: #2c3e50;
+  background-color: #ffffff;
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #8ebce5;
+  outline-offset: 1px;
+  border-color: #4b8fc7;
+}
+
+button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #347ab7;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #28699f;
+}
+
+.display-area {
+  display: grid;
+  gap: 28px;
+}
+
+.summary-panel {
+  padding: 24px 28px;
+}
+
+.summary-panel h2 {
+  margin-bottom: 12px;
+}
+
+.total-amount {
+  margin: 0;
+  color: #264e73;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.list-panel {
+  padding: 28px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #dfeaf3;
+  text-align: left;
+}
+
+th {
+  color: #456178;
+  background-color: #f4f8fc;
+  font-size: 14px;
+}
+
+td {
+  font-size: 14px;
+}
+
+.amount-cell {
+  text-align: right;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  main {
+    width: min(720px, calc(100% - 32px));
+  }
+
+  .ledger-layout {
+    grid-template-columns: 1fr;
+  }
+}
