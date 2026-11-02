@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家計簿</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>家計簿</h1>
+
+    <div class="ledger-layout">
+      <section class="entry-panel" aria-labelledby="entry-heading">
+        <h2 id="entry-heading">家計簿に登録</h2>
+
+        <form id="ledger-form">
+          <div class="form-field">
+            <label for="date">日付</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+
+          <div class="form-field">
+            <label for="item">品目</label>
+            <input type="text" id="item" name="item" required>
+          </div>
+
+          <div class="form-field">
+            <label for="type">区分</label>
+            <select id="type" name="type" required>
+              <option value="">選択してください</option>
+              <option value="expense">支出</option>
+              <option value="income">収入</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="amount">金額</label>
+            <input type="number" id="amount" name="amount" min="0" step="1" required>
+          </div>
+
+          <button type="submit">追加</button>
+        </form>
+      </section>
+
+      <div class="display-area">
+        <section class="summary-panel" aria-labelledby="summary-heading">
+          <h2 id="summary-heading">合計金額</h2>
+          <p class="total-amount" id="total-amount">0 円</p>
+        </section>
+
+        <section class="list-panel" aria-labelledby="list-heading">
+          <h2 id="list-heading">登録内容一覧</h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">日付</th>
+                  <th scope="col">品目</th>
+                  <th scope="col">区分</th>
+                  <th scope="col">金額</th>
+                </tr>
+              </thead>
+              <tbody id="ledger-list">
+                <tr>
+                  <td colspan="4">登録されたデータはありません。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="index.js" defer></script>
+</body>
+</html>
